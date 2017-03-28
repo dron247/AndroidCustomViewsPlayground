@@ -4,14 +4,16 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.RectF;
 import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import java.util.Objects;
+
 /**
  * Created by Андрей on 22.03.2017.
+ * http://startandroid.ru/ru/uroki/vse-uroki-spiskom.html
  */
 
 public class FaceView extends View {
@@ -47,7 +49,7 @@ public class FaceView extends View {
 
 
     private void init(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        this.context = context;
+        this.context = Objects.requireNonNull(context);
 
         mBackgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mBackgroundPaint.setStyle(Paint.Style.FILL);
